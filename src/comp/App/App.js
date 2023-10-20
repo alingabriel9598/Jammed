@@ -1,16 +1,15 @@
-import logo from './logo.svg';
+import React from 'react';
 import styles from'./App.module.css'
-
+import Header from '../Header/Header';
+import Body from '../Body/Body';
+import Footer from '../Footer/Footer'
 
 function App() {
   return (
-    <div className={styles.App}>
-      <header className={styles.AppHeader}>
-        <img src={logo} className={styles.AppLogo} alt="logo" />
-        <p>
-          Site in Construction
-        </p>
-      </header>
+    <div>
+      <Header />
+      <Body />
+      <Footer />
     </div>
   );
 }

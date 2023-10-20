@@ -1,0 +1,11 @@
+.SideBar {
+    width: 240px;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 0.7s;
+    overflow-y: scroll;
+    border-right: 1px solid var(#212529);
+    background: #070707
+}
