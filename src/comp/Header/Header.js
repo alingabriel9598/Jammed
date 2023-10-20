@@ -5,10 +5,14 @@ import SideBar from './SideBar/SideBar';
 
 function Header(){
   return (
-    <>
-    <NavBar />
-    <SideBar />
-    </>
+    <div className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.flex}>
+        <SideBar />
+        <NavBar />
+        </div>
+      </div>
+    </div>
   )
 }
 

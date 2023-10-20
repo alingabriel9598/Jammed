@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer'
 
 function App() {
   return (
-    <div>
+    <div className={styles.body}>
       <Header />
       <Body />
       <Footer />

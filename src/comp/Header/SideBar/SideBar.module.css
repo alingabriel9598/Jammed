@@ -6,6 +6,16 @@
     left: 0;
     transition: all 0.7s;
     overflow-y: scroll;
-    border-right: 1px solid var(#212529);
+    border-right: 1px solid #212529;
     background: #070707
+}
+
+.SideBar::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+}
+
+.SideBar::-webkit-scrollbar-thumb {
+    background: #0F0F0F;
+    border-radius: 10px;
 }

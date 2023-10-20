@@ -1,0 +1,22 @@
+.logo {
+    max-width: 100%;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex!important;
+    position: relative;
+    padding: 18px 30px 21px;
+    align-items: center!important;
+    justify-content: space-between!important;
+}
+
+.wrapper::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #212529;
+    content: "";
+}
