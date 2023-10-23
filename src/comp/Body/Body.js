@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState, useCallback} from 'react';
 import styles from './Body.module.css';
-import NavBar, {handlerChange} from '../Header/NavBar/NavBar';
+import SearchBar from '../Header/NavBar/SearchBar/SearchBar';
 
 
 function Body(){
@@ -8,7 +8,6 @@ function Body(){
     <div className={styles.main}>
         <section className={styles.section}>
           <h1>Results</h1>
-          <article onChange={NavBar}></article>
         </section>
     </div>
   )
