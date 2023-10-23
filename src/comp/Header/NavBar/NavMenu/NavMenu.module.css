@@ -1,0 +1,14 @@
+.a {
+    color: #BAB9BB;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    text-decoration: none;
+    margin-right: 40px;
+}
+a:hover {
+    color: #ffff;
+}

@@ -7,7 +7,7 @@ function SideBar(){
     return (
         <div className={styles.SideBar}>
             <Logo />
-            <WrapBox />
+            <WrapBox name1="Home" name2="Favorite Songs" name3="Create Playlist"/>
         </div>
     )
 }

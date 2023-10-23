@@ -1,0 +1,25 @@
+.form {
+    width: 250px;
+    padding: 5px 15px;
+    background: #0F0F0F;
+    align-items: center!important;
+    display: flex!important;
+    box-sizing: border-box;
+
+}
+.button {
+    background: transparent;
+    border: unset;
+    outline: none;
+    font-size: 14px;
+    color: #BAB9BB;
+}
+.input {
+    padding: 11px 2px 15px;
+    width: 100%;
+    background: transparent;
+    border: unset;
+    outline: none;
+    font-size: 14px;
+    color: #BAB9BB;
+}

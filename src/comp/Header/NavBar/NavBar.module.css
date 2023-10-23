@@ -19,50 +19,6 @@
     list-style: none;
 }
 
-.form {
-    width: 250px;
-    padding: 5px 15px;
-    background: #0F0F0F;
-    align-items: center!important;
-    display: flex!important;
-    box-sizing: border-box;
-
-}
-
-.button {
-    background: transparent;
-    border: unset;
-    outline: none;
-    font-size: 14px;
-    color: #BAB9BB;
-}
-
-.a {
-    color: #BAB9BB;
-    font-weight: 500;
-    font-size: 16px;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    text-transform: capitalize;
-    text-decoration: none;
-    margin-right: 40px;
-}
-
-a:hover {
-    color: #ffff;
-}
-
-.input {
-    padding: 11px 2px 15px;
-    width: 100%;
-    background: transparent;
-    border: unset;
-    outline: none;
-    font-size: 14px;
-    color: #BAB9BB;
-}
-
 .li {
     margin-right: 40px;
 }

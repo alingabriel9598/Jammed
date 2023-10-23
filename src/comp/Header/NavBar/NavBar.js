@@ -1,4 +1,6 @@
 import React from 'react';
+import SearchBar from './SearchBar/SearchBar';
+import NavMenu from './NavMenu/NavMenu';
 import styles from './NavBar.module.css';
 
 function NavBar(){
@@ -6,20 +8,17 @@ function NavBar(){
     <div className={styles.div}>
         <ul className={styles.ul}>
             <li className={styles.li}> 
-                <form className={styles.form}>
-                    <button className={styles.button} type="submit"></button>
-                    <input className={styles.input} type="text" placeholder="Search songs, podcasts, albums..."/>
-                </form>
+              <SearchBar />
             </li>
             <li className={styles.li}>
-                <a href="#" className={styles.a}>Genres</a>
+                <NavMenu name1="Genres"/>
             </li>
             <li className={styles.li}>
-                <a href="#" className={styles.a}>Trending</a>
+                <NavMenu name2="Trending"/>
             </li>
             <li className={styles.li}> 
-                <a href="#" className={styles.a}>Popular</a>
-            </li>
+                <NavMenu name2="Popular"/>
+            </li> 
         </ul>
     </div>
   )

@@ -1,26 +1,27 @@
 import React from 'react';
+import { BiHomeSmile, BiMusic, BiPlus } from "react-icons/bi";
 import styles from './WrapBox.module.css';
 
-function WrapBox(){
+function WrapBox(props){
  return (
     <div className={styles.wrapbox}>
         <ul className={styles.ul}>
             <li className={styles.li}>
                 <a href="#" className={styles.a}>
-                    <i class="ti ti-world"></i>
-                    My Playlist
+                    <BiHomeSmile />
+                    {props.name1}
                 </a>
             </li>
             <li className={styles.li}>
                 <a href="#" className={styles.a}>
-                    <i class="ti ti-world"></i>
-                    Favorite Songs
+                    <BiMusic />
+                    {props.name2}
                 </a>
             </li>
             <li className={styles.li}>
                 <a href="#" className={styles.a}>
-                    <i class="ti ti-world"></i>
-                    Create Playlist
+                    <BiPlus />
+                    {props.name3}
                 </a>
             </li>
         </ul>
