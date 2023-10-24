@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import styles from './Body.module.css';
-import Home from './Home/Home'
+import Home from './Pages/Home/Home'
 import SearchBar from '../Header/NavBar/SearchBar/SearchBar';
 import Results from '../Header/NavBar/Results/Results'
 
