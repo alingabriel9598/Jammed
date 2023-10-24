@@ -11,9 +11,16 @@ function SearchBar(props) {
         props.onSearch(value)
         
     }
+    const handleSearch = (event) => {
+        event.preventDefault();
+        // Pass the input value to the parent component for searching
+        props.onSearch(input);
+        // Clear the search input after searching
+        setInput('');
+      }
     return (
         <form className={styles.form}>
-            <button className={styles.button}>
+            <button className={styles.button} onClick={handleSearch}>
                     <BiSearch/>
             </button>
             <input className={styles.input}
