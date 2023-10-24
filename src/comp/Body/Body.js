@@ -1,19 +1,22 @@
-import React, {useState, useCallback} from 'react';
+import React from 'react';
 import styles from './Body.module.css';
 import Home from './Pages/Home/Home'
-import SearchBar from '../Header/NavBar/SearchBar/SearchBar';
 import Results from '../Header/NavBar/Results/Results'
+import FavSongs from './Pages/FavSongs/FavSongs';
+import CreatePlaylist from './Pages/CreatePlaylist/CreatePlaylist';
+import MyPlaylist from './Pages/MyPlaylist/MyPlaylist';
 
 
-function Body(){
-  const [searchInput, setSearchInput] = useState('');
-  const handleSearch = (input) => {
-    setSearchInput(input);
-  };
+function Body({ searchInput, activePage }){
+  // Check if searchInput is not empty
+  const isSearchInputEmpty = searchInput.trim() === '';
   return (
     <div className={styles.main}>
-        <Home />
-        <Results onSearch={handleSearch} searchInput={searchInput} />
+        {activePage === 'Home' && (!isSearchInputEmpty ? '' : <Home />)}
+        {activePage === 'FavSongs' && <FavSongs />}
+        {activePage === 'MyPlaylist' && <MyPlaylist />}
+        {activePage === 'CreatePlaylist' && <CreatePlaylist />}
+        {!isSearchInputEmpty && <Results searchInput={searchInput} />}
     </div>
   )
 }

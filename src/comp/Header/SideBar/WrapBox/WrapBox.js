@@ -2,26 +2,36 @@ import React from 'react';
 import { BiHomeSmile, BiMusic, BiPlus } from "react-icons/bi";
 import styles from './WrapBox.module.css';
 
-function WrapBox(props){
+function WrapBox({ onPageChange }){
+    const handleLinkClick = (pageName, event) => {
+        event.preventDefault();
+        onPageChange(pageName); // Call onPageChange to update the active page
+    };
  return (
     <div className={styles.wrapbox}>
         <ul className={styles.ul}>
             <li className={styles.li}>
-                <a href="#" className={styles.a}>
+                <a href="/" className={styles.a} onClick={(e) => handleLinkClick('Home', e)}>
                     <BiHomeSmile />
-                    {props.name1}
+                    Home
                 </a>
             </li>
             <li className={styles.li}>
-                <a href="#" className={styles.a}>
+                <a href="/" className={styles.a} onClick={(e) => handleLinkClick('FavSongs', e)}>
                     <BiMusic />
-                    {props.name2}
+                    Favorite Songs
                 </a>
             </li>
             <li className={styles.li}>
-                <a href="#" className={styles.a}>
+                <a href="/" className={styles.a} onClick={(e) => handleLinkClick('MyPlaylist', e)}>
                     <BiPlus />
-                    {props.name3}
+                    My Playlist
+                </a>
+            </li>
+            <li className={styles.li}>
+                <a href="/" className={styles.a} onClick={(e) => handleLinkClick('CreatePlaylist', e)}>
+                    <BiPlus />
+                    Create Playlist
                 </a>
             </li>
         </ul>

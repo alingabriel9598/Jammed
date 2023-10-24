@@ -3,11 +3,11 @@ import styles from './SideBar.module.css'
 import Logo from './Logo/Logo'
 import WrapBox from './WrapBox/WrapBox'
 
-function SideBar(){
+function SideBar({ onPageChange }){
     return (
         <div className={styles.SideBar}>
             <Logo />
-            <WrapBox name1="Home" name2="Favorite Songs" name3="Create Playlist"/>
+            <WrapBox onPageChange={onPageChange}/>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 
-.body::after, ::before {
+.body::after, .body::before {
   box-sizing: border-box
 }
   

@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState} from 'react';
 import { BiSearch } from "react-icons/bi";
 import styles from './SearchBar.module.css'
 
@@ -8,16 +8,12 @@ function SearchBar(props) {
     const handleChange = (event) => {
         const value = event.target.value;
         setInput(value);
+        props.onSearch(value)
         
     }
-    const search = () => {
-        props.onSearch(input);
-        }
-
     return (
         <form className={styles.form}>
-            <button className={styles.button} 
-                    onClick={search}>
+            <button className={styles.button}>
                     <BiSearch/>
             </button>
             <input className={styles.input}
