@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './CreatePlaylist.module.css';
 
-function CreatePlaylist({ selectedSongs, onDeleteSong }) { // Receive the selectedSongs prop
+function CreatePlaylist({ selectedSongs, onDeleteSong, handleSavePlaylist }) { // Receive the selectedSongs prop
+  const [playlistName, setPlaylistName] = useState('');
+  const handlePlaylistNameChange = (event) => {
+    // Update the playlistName state when the input changes
+    setPlaylistName(event.target.value);
+  };
   return (
     <div className={styles.div}>
       <h1>Create your Playlist</h1>
       <form>
-        <input value="Name"/>
+        <input placeholder="Name" 
+               value={playlistName}
+               type="text"
+               onChange={handlePlaylistNameChange}/>
       </form>
       <h4>Song</h4>
       <ul>
@@ -17,6 +25,7 @@ function CreatePlaylist({ selectedSongs, onDeleteSong }) { // Receive the select
           </li>
         ))}
       </ul>
+      <button onClick={() => handleSavePlaylist(playlistName)}>Save Playlist</button>
     </div>
   );
 }

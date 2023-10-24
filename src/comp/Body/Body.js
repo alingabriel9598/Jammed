@@ -27,12 +27,18 @@ function Body({ searchInput, activePage }){
     setSelectedSongs(updatedSongs);
   };
 
+  const handleSavePlaylist = () => {
+    alert(`Playlist Saved`)
+    // Clear the selected songs after saving the playlist.
+    setSelectedSongs([]);
+  };
+
   return (
     <div className={styles.main}>
         {activePage === 'Home' && (!isSearchInputEmpty ? '' : <Home />)}
         {activePage === 'FavSongs' && <FavSongs />}
         {activePage === 'MyPlaylist' && <MyPlaylist />}
-        {activePage === 'CreatePlaylist' && <CreatePlaylist selectedSongs={selectedSongs} onDeleteSong={handleDeleteSong}/>}
+        {activePage === 'CreatePlaylist' && <CreatePlaylist selectedSongs={selectedSongs} onDeleteSong={handleDeleteSong} handleSavePlaylist={handleSavePlaylist}/>}
         {!isSearchInputEmpty && <Results searchInput={searchInput} onSelectSong={handleSelectSong} />}
     </div>
   )
