@@ -13,7 +13,7 @@ function MyPlaylist() {
   }, []);
 
   return (
-    <div className={styles.myPlaylist}>
+    <div className={styles.div}>
       <h1>My Playlists</h1>
       {playlists.map((playlist) => (
         <div key={playlist.id} className={styles.playlist}>
