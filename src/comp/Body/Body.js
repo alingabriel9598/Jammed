@@ -14,7 +14,7 @@ function Body({ searchInput, activePage }){
   const [selectedSongs, setSelectedSongs] = useState([]);
   const handleSelectSong = (song) => {
     if (!selectedSongs.some((selectedSong) => selectedSong.id === song.id)){
-    setSelectedSongs([...selectedSongs, song]);
+      setSelectedSongs((prevSelectedSongs) => [...prevSelectedSongs, song]);
   } else {
     // Display a message that the song is already in the playlist
     alert('This song is already in the playlist.');
@@ -27,19 +27,17 @@ function Body({ searchInput, activePage }){
     setSelectedSongs(updatedSongs);
   };
 
-  const handleSavePlaylist = () => {
-    alert(`Playlist Saved`)
-    // Clear the selected songs after saving the playlist.
-    setSelectedSongs([]);
+  const clearSelectedSongs = () => {
+    setSelectedSongs([]); // Clear the selected songs array
   };
-
+    
   return (
     <div className={styles.main}>
         {activePage === 'Home' && (!isSearchInputEmpty ? '' : <Home />)}
         {activePage === 'FavSongs' && <FavSongs />}
         {activePage === 'MyPlaylist' && <MyPlaylist />}
-        {activePage === 'CreatePlaylist' && <CreatePlaylist selectedSongs={selectedSongs} onDeleteSong={handleDeleteSong} handleSavePlaylist={handleSavePlaylist}/>}
-        {!isSearchInputEmpty && <Results searchInput={searchInput} onSelectSong={handleSelectSong} />}
+        {activePage === 'CreatePlaylist' && <CreatePlaylist selectedSongs={selectedSongs} onDeleteSong={handleDeleteSong} clearSelectedSongs={clearSelectedSongs}/>}
+        {!isSearchInputEmpty && <Results searchInput={searchInput} onSongAdded={handleSelectSong} />}
     </div>
   )
 }

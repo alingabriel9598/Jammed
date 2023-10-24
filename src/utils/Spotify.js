@@ -52,7 +52,7 @@ const Spotify = {
       });
   },
 
-  createPlaylist(name, trackUris) {
+  savePlaylist(name, trackUris) {
     const accessToken = Spotify.getAccessToken();
     const headers = {
       Authorization: `Bearer ${accessToken}`,
@@ -87,25 +87,54 @@ const Spotify = {
       });
   },
 
-  getUserPlaylists() {
-    const accessToken = Spotify.getAccessToken();
-    const headers = {
-      Authorization: `Bearer ${accessToken}`,
-    };
-
+  getPlaylists() {
+    const accessToken = this.getAccessToken();
     return fetch('https://api.spotify.com/v1/me/playlists', {
-      headers: headers,
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
     })
-      .then((response) => response.json())
-      .then((data) => {
-        if (!data.items) {
+      .then(response => response.json())
+      .then(jsonResponse => {
+        if (!jsonResponse.items) {
           return [];
         }
-
-        return data.items.map((playlist) => ({
+        const playlists = jsonResponse.items.map(playlist => ({
           id: playlist.id,
           name: playlist.name,
+          description: playlist.description,
           tracks: playlist.tracks.total,
+        }));
+  
+        // Fetch song details for each playlist
+        const playlistPromises = playlists.map(playlist => {
+          return this.getPlaylistTracks(playlist.id, accessToken).then(tracks => {
+            playlist.tracksData = tracks;
+            return playlist;
+          });
+        });
+  
+        return Promise.all(playlistPromises);
+      });
+  },
+  
+  getPlaylistTracks(playlistId, accessToken) {
+    return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    })
+      .then(response => response.json())
+      .then(jsonResponse => {
+        if (!jsonResponse.items) {
+          return [];
+        }
+        return jsonResponse.items.map(track => ({
+          id: track.track.id,
+          name: track.track.name,
+          artist: track.track.artists[0].name,
+          album: track.track.album.name,
+          uri: track.track.uri
         }));
       });
   },
