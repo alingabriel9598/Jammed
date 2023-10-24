@@ -1,16 +1,19 @@
 import React, {useState, useCallback} from 'react';
 import styles from './Body.module.css';
+import Home from './Home/Home'
+import SearchBar from '../Header/NavBar/SearchBar/SearchBar';
+import Results from '../Header/NavBar/Results/Results'
 
 
 function Body(){
+  const [searchInput, setSearchInput] = useState('');
+  const handleSearch = (input) => {
+    setSearchInput(input);
+  };
   return (
     <div className={styles.main}>
-        <section className={styles.section}>
-          <h1>Results</h1>
-          <a href="#" className={styles.button}>
-            <span className={styles.span}> Save to Spotify</span>
-          </a>
-        </section>
+        <Home />
+        <Results onSearch={handleSearch} searchInput={searchInput} />
     </div>
   )
 }

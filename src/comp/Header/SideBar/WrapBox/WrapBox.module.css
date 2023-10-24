@@ -19,12 +19,12 @@
     transform-origin: bottom right;
   }
   
-  li:hover::before {
+.li:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
   
-  li::before {
+.li::before {
     content: " ";
     display: block;
     position: absolute;

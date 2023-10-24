@@ -3,32 +3,3 @@
     position: relative;
     transition: all 0.8s;
 }
-
-.section {
-    padding-top: 113px;
-    margin-right: 24px;
-    margin-left: 24px;
-}
-
-.button {
-    width: 150px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-block;
-    border: 2px solid #25A56A;
-    background-color: #25A56A;
-    border-radius: 20px;
-    color: #fff;
-    transition: .3s;
-    text-decoration: none;
-  }
-
-  .button:hover {
-    box-shadow: 8px 8px #25a55A;
-    transition: .3s;
-  }

@@ -6,11 +6,13 @@ function SearchBar(props) {
     const [input, setInput] = useState('');
 
     const handleChange = (event) => {
-        setInput(event.target.value);
+        const value = event.target.value;
+        setInput(value);
+        
     }
-    const search = useCallback(() => {
+    const search = () => {
         props.onSearch(input);
-      }, [props.onSearch, input]);
+        }
 
     return (
         <form className={styles.form}>
