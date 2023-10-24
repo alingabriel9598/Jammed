@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar/SearchBar';
-import NavMenu from './NavMenu/NavMenu';
+import {NavMenu1, NavMenu2, NavMenu3} from './NavMenu/NavMenu';
 import styles from './NavBar.module.css';
 
 function NavBar(){
@@ -11,13 +11,13 @@ function NavBar(){
               <SearchBar />
             </li>
             <li className={styles.li}>
-                <NavMenu name1="Genres"/>
+                <NavMenu1 name="Genres"/>
             </li>
             <li className={styles.li}>
-                <NavMenu name2="Trending"/>
+                <NavMenu2 name="Trending"/>
             </li>
             <li className={styles.li}> 
-                <NavMenu name2="Popular"/>
+                <NavMenu3 name="Popular"/>
             </li> 
         </ul>
     </div>

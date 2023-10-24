@@ -1,6 +1,5 @@
 import React, {useState, useCallback} from 'react';
 import styles from './Body.module.css';
-import SearchBar from '../Header/NavBar/SearchBar/SearchBar';
 
 
 function Body(){

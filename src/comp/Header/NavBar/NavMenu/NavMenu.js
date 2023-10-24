@@ -1,14 +1,26 @@
 import React from 'react';
 import styles from './NavMenu.module.css';
 
-function NavMenu(props){
+export function NavMenu1(props){
     return (
         <>
-          <a href="#" className={styles.a}>{props.name1}</a>
-          <a href="#" className={styles.a}>{props.name2}</a>
-          <a href="#" className={styles.a}>{props.name3}</a>
+          <a href="#" className={styles.a}>{props.name}</a>
         </>
     )
 }
 
-export default NavMenu;
+export function NavMenu2(props){
+  return(
+    <>
+      <a href="#" className={styles.a}>{props.name}</a>
+    </>
+  )
+}
+
+export function NavMenu3(props){
+  return(
+    <>
+      <a href="#" className={styles.a}>{props.name}</a>
+    </>
+  )
+}
