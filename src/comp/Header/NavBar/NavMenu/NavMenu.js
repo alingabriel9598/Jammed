@@ -4,7 +4,7 @@ import styles from './NavMenu.module.css';
 export function NavMenu1(props){
     return (
         <>
-          <a href="#" className={styles.a}>{props.name}</a>
+          <a href="/" className={styles.a}>{props.name}</a>
         </>
     )
 }
@@ -12,7 +12,7 @@ export function NavMenu1(props){
 export function NavMenu2(props){
   return(
     <>
-      <a href="#" className={styles.a}>{props.name}</a>
+      <a href="/" className={styles.a}>{props.name}</a>
     </>
   )
 }
@@ -20,7 +20,7 @@ export function NavMenu2(props){
 export function NavMenu3(props){
   return(
     <>
-      <a href="#" className={styles.a}>{props.name}</a>
+      <a href="/" className={styles.a}>{props.name}</a>
     </>
   )
 }
