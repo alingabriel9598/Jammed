@@ -19,13 +19,16 @@ function FavSongs() {
   return (
     <div className={styles.div}>
       <h1>Your Favorite Songs</h1>
-      <ul>
+      <div className={styles.trackList}>
         {favoriteSongs.map(song => (
-          <li key={song.id}>
-            {song.name} - {song.artist} - {song.album}
-          </li>
+          <div className={styles.track} key={song.id}>
+            <div className={styles.trackInfo}>
+              <h3 className={styles.trackName}>{song.name}</h3>
+              <p className={styles.trackArtist}>{song.artist} | {song.album}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

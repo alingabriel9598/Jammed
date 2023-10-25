@@ -6,3 +6,32 @@
     margin-right: 24px;
     margin-left: 24px;
 }
+
+.trackList {
+    width: 50%;
+  }
+  
+  .track {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+    margin: 20px;
+  
+  }
+  
+  .trackInfo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .trackName {
+    margin-bottom: 0.22rem;
+  }
+  
+  .trackArtist {
+    font-size: .83rem;
+    font-weight: 300;
+    color: rgba(256, 256, 256, 0.8);
+  }
