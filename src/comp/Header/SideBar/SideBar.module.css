@@ -44,7 +44,10 @@
     justify-content: center;
     transition: all 0.7s;
 }
-    
+    .iconButton{
+        color: #fff;
+        font-size: 40px;
+    }
 
 .closebtn:hover {
     cursor: pointer;
