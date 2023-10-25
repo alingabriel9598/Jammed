@@ -38,21 +38,27 @@ function CreatePlaylist({ selectedSongs, onDeleteSong,  clearSelectedSongs }) { 
     <div className={styles.div}>
       <h1>Create your Playlist</h1>
       <form>
-        <input placeholder="Name" 
+        <input placeholder="Name of your new playlist" 
                value={playlistName}
                type="text"
-               onChange={handlePlaylistNameChange}/>
+               onChange={handlePlaylistNameChange}
+               className={styles.input}/>
       </form>
-      <h4>Song</h4>
-      <ul>
+      <h4>Songs List</h4>
+      <div className={styles.trackList}>
         {selectedSongs.map((song) => (
-          <li key={song.id}>
-            {song.name} - {song.artist} - {song.album}
-            <button onClick={() => onDeleteSong(song)}>Delete</button>
-          </li>
+          <div className={styles.track}key={song.id}>
+            <div className={styles.trackInfo}key={song.id}>
+                <div>
+                  <h3 className={styles.trackName}>{song.name}</h3>
+                  <p className={styles.trackArtist}>{song.artist} | {song.album}</p>
+                </div>
+          </div>
+          <button onClick={() => onDeleteSong(song) } className={styles.button}>-</button>
+          </div>
         ))}
-      </ul>
-      <button onClick={handleSavePlaylist}>Save Playlist</button>
+      </div>
+      <button onClick={handleSavePlaylist} className={styles.savePlaylistButton}>Save Playlist</button>
     </div>
   );
 }
