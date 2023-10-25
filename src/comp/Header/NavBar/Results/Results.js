@@ -29,8 +29,8 @@ function Results({ searchInput, onSongAdded }){
     };
     return (
         <div>
-          <section className={styles.section}>
-            <h1>Results for {searchInput}</h1>
+          <div className={styles.section}>
+            <h1>Results for "{searchInput}"</h1>
             {confirmationMessage && <p>{confirmationMessage}</p>}
             {searchResults.length > 0 ? (
           <div className={styles.trackList}>
@@ -38,7 +38,7 @@ function Results({ searchInput, onSongAdded }){
               <div className={styles.track}key={song.id}>
                 <div className={styles.trackInfo}>
                   <h3 className={styles.trackName}>{song.name}</h3>
-                  <p clafssName={styles.artist}>{song.artist} | {song.album}</p>
+                  <p className={styles.trackArtist}>{song.artist} | {song.album}</p>
                 </div>
                 <button className={styles.button} onClick={() => handleSongAdded(song)}>+</button>
               </div>
@@ -47,7 +47,7 @@ function Results({ searchInput, onSongAdded }){
         ) : (
           <p>No results found.</p>
         )}
-          </section>
+          </div>
         </div>
     )
 }

@@ -5,13 +5,15 @@
 }
 
 .trackList {
-  width: 100%;
+  width: 50%;
 }
 
 .track {
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+  margin: 20px;
+
 }
 
 .trackInfo {
@@ -19,7 +21,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 72px;
 }
 
 .trackName {
@@ -40,4 +41,8 @@
   border: 0px;
   background-color: rgba(0, 0, 0, 0);
   color: #fff;
+  }
+
+  .button:hover {
+    color: rgba(265, 265, 265, .5);
   }
