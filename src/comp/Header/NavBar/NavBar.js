@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import {NavMenu1, NavMenu2, NavMenu3} from './NavMenu/NavMenu';
 import styles from './NavBar.module.css';
 
 function NavBar({ onSearch }){
+  const [isSticky, setIsSticky] = useState(false);
+
+  const toggleSticky = () => {
+    setIsSticky(!isSticky);
+  };
   // Define a function to handle search in NavBar
   const handleSearch = (searchInput) => {
     onSearch(searchInput); // Pass the search input up to the Header component
 }
   return (
-    <div className={styles.div}>
+    <div className={`${styles.div} ${isSticky ? styles.sticky : ''}`}
+         onMouseEnter={toggleSticky}
+         onMouseLeave={toggleSticky}>
         <ul className={styles.ul}>
             <li className={styles.li}> 
               <SearchBar onSearch={handleSearch} className={styles.form}/>

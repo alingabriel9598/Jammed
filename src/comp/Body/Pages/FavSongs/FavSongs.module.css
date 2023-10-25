@@ -11,6 +11,11 @@
     width: 50%;
   }
   
+  @media only screen and (max-width: 1199px) {
+    .trackList {
+      width: 100%;
+    }
+  }
   .track {
     display: flex;
     align-items: center;

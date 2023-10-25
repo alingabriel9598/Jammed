@@ -3,3 +3,10 @@
     position: relative;
     transition: all 0.8s;
 }
+
+@media only screen and (max-width: 1199px) {
+    .main {
+        margin-left: 0;
+        overflow-x: hidden;
+    }
+}

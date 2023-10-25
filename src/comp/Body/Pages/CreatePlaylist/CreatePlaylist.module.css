@@ -1,13 +1,13 @@
-.div {
+  .div {
     margin-left: 240px;
     position: relative;
     transition: all 0.8s;
     padding-top: 113px;
     margin-right: 24px;
     margin-left: 24px;
-}
+  }
 
-.trackList {
+  .trackList {
     width: 50%;
   }
   
@@ -105,4 +105,10 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.55rem;
     color: #fff;
+    }
+
+    @media (max-width: 1199px) {
+      .input {
+        width: 100%
+      }
     }

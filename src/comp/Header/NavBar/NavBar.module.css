@@ -9,6 +9,7 @@
     left: 240px;
     border-bottom: 1px solid #212529;
     background: #070707;
+    
 }
 
 .ul {
@@ -24,4 +25,16 @@
 .li {
     margin-right: 40px;
     width: 100% /* To be removed when adding NavMenu */
+}
+
+@media only screen and (max-width: 1199px) {
+    .div {
+    left: 0;
+    width: calc(100% - 0px);
+    padding-left: 65px;
+    }
+
+    .sticky {
+            position: fixed;
+    }
 }

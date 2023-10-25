@@ -19,3 +19,41 @@
     background: #0F0F0F;
     border-radius: 10px;
 }
+
+@media (max-width: 1199px) {
+    .SideBar {
+      left: -311px;
+    }
+    .SideBar.open {
+        left: 0;
+        margin-top: 15%
+    }
+  }
+
+  .closebtn {
+    display: none; /* Initially hide the close button */
+    position: fixed;
+    top: 15px;
+    left: -40px;
+    z-index: 99999;
+    background: #25A56A;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s;
+}
+    
+
+.closebtn:hover {
+    cursor: pointer;
+}
+
+/* Remove the existing CSS for the close button based on the media query */
+@media (max-width: 1199px) {
+    .closebtn {
+        left: 0px;
+        top: 20px;
+    }
+}
