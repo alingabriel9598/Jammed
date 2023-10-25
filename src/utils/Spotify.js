@@ -23,7 +23,7 @@ const Spotify = {
       return accessToken;
     } else {
       // Redirect the user to Spotify for authentication
-      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public user-library-read&redirect_uri=${redirectUri}`;
+      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public user-library-read &redirect_uri=${redirectUri}`;
       window.location = accessUrl;
     }
   },
