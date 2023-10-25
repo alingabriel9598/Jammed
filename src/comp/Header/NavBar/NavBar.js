@@ -12,9 +12,9 @@ function NavBar({ onSearch }){
     <div className={styles.div}>
         <ul className={styles.ul}>
             <li className={styles.li}> 
-              <SearchBar onSearch={handleSearch}/>
+              <SearchBar onSearch={handleSearch} className={styles.form}/>
             </li>
-            <li className={styles.li}>
+            {!false ? '' : (<><li className={styles.li}>
                 <NavMenu1 name="Genres"/>
             </li>
             <li className={styles.li}>
@@ -22,7 +22,7 @@ function NavBar({ onSearch }){
             </li>
             <li className={styles.li}> 
                 <NavMenu3 name="Popular"/>
-            </li> 
+            </li></>)}
         </ul>
     </div>
   )
