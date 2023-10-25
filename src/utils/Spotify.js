@@ -23,7 +23,7 @@ const Spotify = {
       return accessToken;
     } else {
       // Redirect the user to Spotify for authentication
-      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
+      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public user-library-read&redirect_uri=${redirectUri}`;
       window.location = accessUrl;
     }
   },
@@ -141,25 +141,22 @@ const Spotify = {
 
   getFavoriteSongs() {
     const accessToken = Spotify.getAccessToken();
-    const headers = {
-      Authorization: `Bearer ${accessToken}`,
-    };
-
     return fetch('https://api.spotify.com/v1/me/tracks', {
-      headers: headers,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
     })
-      .then((response) => response.json())
-      .then((data) => {
-        if (!data.items) {
+      .then(response => response.json())
+      .then(jsonResponse => {
+        if (!jsonResponse.items) {
           return [];
         }
-
-        return data.items.map((track) => ({
-          id: track.track.id,
-          name: track.track.name,
-          artist: track.track.artists[0].name,
-          album: track.track.album.name,
-          uri: track.track.uri,
+        return jsonResponse.items.map(item => ({
+          id: item.track.id,
+          name: item.track.name,
+          artist: item.track.artists[0].name,
+          album: item.track.album.name,
+          uri: item.track.uri,
         }));
       });
   },
