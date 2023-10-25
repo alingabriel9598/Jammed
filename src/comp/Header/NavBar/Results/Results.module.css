@@ -4,25 +4,40 @@
     margin-top: 100px;
 }
 
-.button {
-    width: 150px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-block;
-    border: 2px solid #25A56A;
-    background-color: #25A56A;
-    border-radius: 20px;
-    color: #fff;
-    transition: .3s;
-    text-decoration: none;
-  }
+.trackList {
+  width: 100%;
+}
 
-  .button:hover {
-    box-shadow: 8px 8px #25a55A;
-    transition: .3s;
+.track {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+}
+
+.trackInfo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 72px;
+}
+
+.trackName {
+  margin-bottom: 0.22rem;
+}
+
+.trackArtist {
+  font-size: .83rem;
+  font-weight: 300;
+  color: rgba(256, 256, 256, 0.8);
+}
+
+.button {
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.05rem;
+  transition: color .25s;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
   }

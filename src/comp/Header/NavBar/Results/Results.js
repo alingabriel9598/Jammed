@@ -33,14 +33,17 @@ function Results({ searchInput, onSongAdded }){
             <h1>Results for {searchInput}</h1>
             {confirmationMessage && <p>{confirmationMessage}</p>}
             {searchResults.length > 0 ? (
-          <ul>
+          <div className={styles.trackList}>
             {searchResults.map((song) => (
-              <li key={song.id}>
-                {song.name} - {song.artist} - {song.album}
-                <div><button className={styles.button}onClick={() => handleSongAdded(song)}>Add to Playlist</button></div>
-              </li>
+              <div className={styles.track}key={song.id}>
+                <div className={styles.trackInfo}>
+                  <h3 className={styles.trackName}>{song.name}</h3>
+                  <p clafssName={styles.artist}>{song.artist} | {song.album}</p>
+                </div>
+                <button className={styles.button} onClick={() => handleSongAdded(song)}>+</button>
+              </div>
             ))}
-          </ul>
+          </div>
         ) : (
           <p>No results found.</p>
         )}
